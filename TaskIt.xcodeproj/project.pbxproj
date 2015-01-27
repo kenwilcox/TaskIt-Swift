@@ -14,6 +14,7 @@
 		BEB7B7581A775B8900B2441E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB7B7561A775B8900B2441E /* LaunchScreen.xib */; };
 		BEB7B7641A775B8900B2441E /* TaskItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7631A775B8900B2441E /* TaskItTests.swift */; };
 		BEB7B76F1A7765B800B2441E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEB7B76D1A7765B800B2441E /* LICENSE */; };
+		BEB7B7721A77672100B2441E /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		BEB7B7631A775B8900B2441E /* TaskItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItTests.swift; sourceTree = "<group>"; };
 		BEB7B76D1A7765B800B2441E /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BEB7B76E1A7765B800B2441E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				BEB7B74D1A775B8900B2441E /* AppDelegate.swift */,
 				BEB7B74F1A775B8900B2441E /* ViewController.swift */,
+				BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */,
 				BEB7B7511A775B8900B2441E /* Main.storyboard */,
 				BEB7B7541A775B8900B2441E /* Images.xcassets */,
 				BEB7B7561A775B8900B2441E /* LaunchScreen.xib */,
@@ -220,6 +223,7 @@
 			files = (
 				BEB7B7501A775B8900B2441E /* ViewController.swift in Sources */,
 				BEB7B74E1A775B8900B2441E /* AppDelegate.swift in Sources */,
+				BEB7B7721A77672100B2441E /* TaskTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
