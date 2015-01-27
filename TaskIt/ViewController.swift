@@ -34,6 +34,9 @@ extension ViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskTableViewCell
+    cell.taskLabel.text = "Study Swift"
+    cell.descriptionLabel.text = "iOS Docs, github, etc."
+    cell.dateLabel.text = "01/30/2015"
     return cell
   }
 }
