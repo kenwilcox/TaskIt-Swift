@@ -34,7 +34,16 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showTaskDetail" {
+      let detailVC = segue.destinationViewController as TaskDetailViewController
+      let indexPath = self.tableView.indexPathForSelectedRow()
+      let thisTask = taskArray[indexPath!.row]
+      //let indexPath = sender as NSIndexPath
+      //let thisTask = taskArray[indexPath.row]
+      detailVC.detailTaskModel = thisTask
+    }
+  }
 }
 
 // MARK: - UITableViewDataSource
@@ -60,6 +69,7 @@ extension ViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    
+    println(indexPath.row)
+    performSegueWithIdentifier("showTaskDetail", sender: self)
   }
 }
