@@ -16,6 +16,7 @@
 		BEB7B76F1A7765B800B2441E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BEB7B76D1A7765B800B2441E /* LICENSE */; };
 		BEB7B7721A77672100B2441E /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */; };
 		BEB7B7741A77CCD300B2441E /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7731A77CCD300B2441E /* TaskModel.swift */; };
+		BEB7B7761A77D7EC00B2441E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7751A77D7EC00B2441E /* TaskDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		BEB7B76E1A7765B800B2441E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		BEB7B7731A77CCD300B2441E /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		BEB7B7751A77D7EC00B2441E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				BEB7B74D1A775B8900B2441E /* AppDelegate.swift */,
 				BEB7B74F1A775B8900B2441E /* ViewController.swift */,
+				BEB7B7751A77D7EC00B2441E /* TaskDetailViewController.swift */,
 				BEB7B7731A77CCD300B2441E /* TaskModel.swift */,
 				BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */,
 				BEB7B7511A775B8900B2441E /* Main.storyboard */,
@@ -228,6 +231,7 @@
 				BEB7B74E1A775B8900B2441E /* AppDelegate.swift in Sources */,
 				BEB7B7741A77CCD300B2441E /* TaskModel.swift in Sources */,
 				BEB7B7721A77672100B2441E /* TaskTableViewCell.swift in Sources */,
+				BEB7B7761A77D7EC00B2441E /* TaskDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
