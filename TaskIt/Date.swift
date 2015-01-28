@@ -28,13 +28,13 @@ class Date {
   }
 }
 
+
 extension NSDate {
+  
   func toString() -> String {
     return NSDateFormatter.localizedStringFromDate(self, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.NoStyle)
   }
-}
 
-extension NSDate {
   func toString(let format:String) -> String? {
     var formatter:NSDateFormatter = NSDateFormatter()
     formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
@@ -42,4 +42,32 @@ extension NSDate {
     formatter.dateFormat = format
     return formatter.stringFromDate(self)
   }
+  
+  // Bummer that this doesn't work
+//  convenience init(year:Int, month:Int, day:Int) {
+//    self.init()
+//    
+//    var components = NSDateComponents()
+//    components.year = year
+//    components.month = month
+//    components.day = day
+//    
+//    var gregorianCalendar = NSCalendar(identifier: NSGregorianCalendar)
+//    var date = gregorianCalendar?.dateFromComponents(components)
+//    
+//  }
+  
+  class func from(#year: Int, month: Int, day: Int) -> NSDate {
+    
+    var components = NSDateComponents()
+    components.year = year
+    components.month = month
+    components.day = day
+    
+    var gregorianCalendar = NSCalendar(identifier: NSGregorianCalendar)
+    var date = gregorianCalendar?.dateFromComponents(components)
+    
+    return date!
+  }
 }
+
