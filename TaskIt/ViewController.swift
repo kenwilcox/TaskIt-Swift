@@ -19,10 +19,14 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    let task1 = TaskModel(task: "Study Swift", subTask: "iOS Docs, github, etc.", date: "01/30/2015")
-    let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: "01/30/2015")
+    let date1 = Date.from(year: 2015, month: 1, day: 30)
+    let date2 = Date.from(year: 2015, month: 1, day: 27)
+    let date3 = Date.from(year: 2015, month: 1, day: 31)
     
-    taskArray = [task1, task2, TaskModel(task: "Gym", subTask: "Leg day", date: "01/31/2015")]
+    let task1 = TaskModel(task: "Study Swift", subTask: "iOS Docs, github, etc.", date: date1)
+    let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: date2)
+    
+    taskArray = [task1, task2, TaskModel(task: "Gym", subTask: "Leg day", date: date3)]
     
     // Get rid of the bogus empty rows
     tableView.tableFooterView = UIView()
@@ -62,7 +66,7 @@ extension ViewController: UITableViewDataSource {
     
     cell.taskLabel.text = thisTask.task
     cell.descriptionLabel.text = thisTask.subTask
-    cell.dateLabel.text = thisTask.date
+    cell.dateLabel.text = Date.toString(date: thisTask.date)
 
     return cell
   }

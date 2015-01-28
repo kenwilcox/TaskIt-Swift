@@ -9,6 +9,7 @@
 import Foundation
 
 class Date {
+  
   class func from(#year: Int, month: Int, day: Int) -> NSDate {
     
     var components = NSDateComponents()
@@ -20,5 +21,9 @@ class Date {
     var date = gregorianCalendar?.dateFromComponents(components)
     
     return date!
+  }
+  
+  class func toString(#date: NSDate) -> String {
+    return NSDateFormatter.localizedStringFromDate(date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.NoStyle)
   }
 }
