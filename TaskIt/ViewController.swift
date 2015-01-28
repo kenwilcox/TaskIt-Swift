@@ -19,9 +19,9 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    let date1 = Date.from(year: 2015, month: 1, day: 30)
-    let date2 = Date.from(year: 2015, month: 1, day: 27)
-    let date3 = Date.from(year: 2015, month: 1, day: 31)
+    let date1 = NSDate.from(year: 2015, month: 1, day: 30)
+    let date2 = NSDate.from(year: 2015, month: 1, day: 27)
+    let date3 = NSDate.from(year: 2015, month: 1, day: 31)
     
     let task1 = TaskModel(task: "Study Swift", subTask: "iOS Docs, github, etc.", date: date1)
     let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: date2)
