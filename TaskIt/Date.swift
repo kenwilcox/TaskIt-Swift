@@ -27,3 +27,19 @@ class Date {
     return NSDateFormatter.localizedStringFromDate(date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.NoStyle)
   }
 }
+
+extension NSDate {
+  func toString() -> String {
+    return NSDateFormatter.localizedStringFromDate(self, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.NoStyle)
+  }
+}
+
+extension NSDate {
+  func toString(let format:String) -> String? {
+    var formatter:NSDateFormatter = NSDateFormatter()
+    formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+    formatter.timeZone = NSTimeZone()
+    formatter.dateFormat = format
+    return formatter.stringFromDate(self)
+  }
+}

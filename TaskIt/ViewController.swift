@@ -66,7 +66,8 @@ extension ViewController: UITableViewDataSource {
     
     cell.taskLabel.text = thisTask.task
     cell.descriptionLabel.text = thisTask.subTask
-    cell.dateLabel.text = Date.toString(date: thisTask.date)
+    //cell.dateLabel.text = Date.toString(date: thisTask.date)
+    cell.dateLabel.text = thisTask.date.toString()
 
     return cell
   }
