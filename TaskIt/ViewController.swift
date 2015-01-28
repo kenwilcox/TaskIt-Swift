@@ -41,12 +41,14 @@ class ViewController: UIViewController {
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showTaskDetail" {
-      let detailVC = segue.destinationViewController as TaskDetailViewController
-      let indexPath = self.tableView.indexPathForSelectedRow()
-      let thisTask = taskArray[indexPath!.row]
-      //let indexPath = sender as NSIndexPath
-      //let thisTask = taskArray[indexPath.row]
-      detailVC.detailTaskModel = thisTask
+      if segue.destinationViewController is TaskDetailViewController {
+        let detailVC = segue.destinationViewController as TaskDetailViewController
+        let indexPath = self.tableView.indexPathForSelectedRow()
+        let thisTask = taskArray[indexPath!.row]
+        //let indexPath = sender as NSIndexPath
+        //let thisTask = taskArray[indexPath.row]
+        detailVC.detailTaskModel = thisTask
+      }
     }
   }
 }
