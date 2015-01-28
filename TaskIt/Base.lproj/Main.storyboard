@@ -94,7 +94,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9i-eI-IAY">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H9i-eI-IAY">
                                 <rect key="frame" x="0.0" y="186" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="444061915.24219698">
                                     <!--2015-01-27 14:31:55 +0000-->
