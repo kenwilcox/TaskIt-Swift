@@ -26,12 +26,7 @@ class ViewController: UIViewController {
     
     // Get rid of the bogus empty rows
     tableView.tableFooterView = UIView()
-    tableView.reloadData()
-    
-    // example of calling prepareForSegue
-    let path = NSIndexPath(forRow: 0, inSection: 0)
-    tableView.selectRowAtIndexPath(path, animated: true, scrollPosition: UITableViewScrollPosition.Top)
-    performSegueWithIdentifier("showTaskDetail", sender: self)
+    //tableView.reloadData()
   }
   
   override func didReceiveMemoryWarning() {
