@@ -63,12 +63,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="wsj-yQ-hwj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="74s-y6-6Fu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="74s-y6-6Fu">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="Nvy-qh-kc2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Mgd-xe-ekg" id="3SM-zp-4Pg"/>
                         <segue destination="CcO-sM-5m6" kind="show" identifier="showTaskDetail" id="f2S-8e-aP1"/>
-                        <segue destination="LWo-lT-Y09" kind="presentation" identifier="addTask" id="kC5-Lk-BfV"/>
+                        <segue destination="LWo-lT-Y09" kind="presentation" identifier="showTaskAdd" id="kC5-Lk-BfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -108,7 +112,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Detail" id="0Kp-iO-psa">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kc4-fH-IU2"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="kc4-fH-IU2">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="CcO-sM-5m6" id="cG1-Si-GrL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="172-lt-V9u"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -120,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJp-t5-hkq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1796" y="361"/>
+            <point key="canvasLocation" x="1830" y="15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bge-kf-Mfx">
@@ -138,7 +146,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rma-WZ-yAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="341" y="1022"/>
+            <point key="canvasLocation" x="425" y="361"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="uWu-bV-c2q">
@@ -157,6 +165,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="LWo-lT-Y09" eventType="touchUpInside" id="Wqr-XN-g0s"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZi-FL-xoA">
                                 <rect key="frame" x="232" y="20" width="64" height="30"/>
@@ -204,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ADe-iL-T2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="1047"/>
+            <point key="canvasLocation" x="1830" y="700"/>
         </scene>
     </scenes>
 </document>

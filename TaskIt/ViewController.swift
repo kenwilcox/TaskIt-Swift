@@ -50,6 +50,10 @@ class ViewController: UIViewController {
       }
     }
   }
+  
+  @IBAction func addButtonTapped(sender: UIBarButtonItem) {
+    performSegueWithIdentifier("showTaskAdd", sender: self)
+  }
 }
 
 // MARK: - UITableViewDataSource
