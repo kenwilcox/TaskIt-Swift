@@ -18,6 +18,7 @@
 		BEB7B7741A77CCD300B2441E /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7731A77CCD300B2441E /* TaskModel.swift */; };
 		BEB7B7761A77D7EC00B2441E /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7751A77D7EC00B2441E /* TaskDetailViewController.swift */; };
 		BEB7B7781A78AB0A00B2441E /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7771A78AB0A00B2441E /* Date.swift */; };
+		BEB7B77A1A7A73AC00B2441E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B7791A7A73AC00B2441E /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		BEB7B7731A77CCD300B2441E /* TaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		BEB7B7751A77D7EC00B2441E /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		BEB7B7771A78AB0A00B2441E /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BEB7B7791A7A73AC00B2441E /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				BEB7B74D1A775B8900B2441E /* AppDelegate.swift */,
 				BEB7B74F1A775B8900B2441E /* ViewController.swift */,
 				BEB7B7751A77D7EC00B2441E /* TaskDetailViewController.swift */,
+				BEB7B7791A7A73AC00B2441E /* AddTaskViewController.swift */,
 				BEB7B7731A77CCD300B2441E /* TaskModel.swift */,
 				BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */,
 				BEB7B7771A78AB0A00B2441E /* Date.swift */,
@@ -236,6 +239,7 @@
 				BEB7B7741A77CCD300B2441E /* TaskModel.swift in Sources */,
 				BEB7B7721A77672100B2441E /* TaskTableViewCell.swift in Sources */,
 				BEB7B7761A77D7EC00B2441E /* TaskDetailViewController.swift in Sources */,
+				BEB7B77A1A7A73AC00B2441E /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
