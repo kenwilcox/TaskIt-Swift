@@ -36,9 +36,8 @@ class ViewController: UIViewController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
     
-    taskArray = taskArray.sorted {
-      (taskOne:TaskModel, taskTwo:TaskModel) -> Bool in
-      return taskOne.date.timeIntervalSince1970 < taskTwo.date.timeIntervalSince1970
+    taskArray.sort {
+      $0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970
     }
     
     tableView.reloadData()
