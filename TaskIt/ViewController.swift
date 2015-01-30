@@ -106,7 +106,7 @@ extension ViewController: UITableViewDelegate {
     performSegueWithIdentifier("showTaskDetail", sender: self)
   }
   
-  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+  func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
     return 25
   }
   
