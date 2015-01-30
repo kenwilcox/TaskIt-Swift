@@ -117,4 +117,20 @@ extension ViewController: UITableViewDelegate {
       return "Completed"
     }
   }
+  
+  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    var numberOfSection: Int
+    var headerView: UIView = UIView()
+    headerView.drawRect(CGRectMake(0, 0, tableView.bounds.size.width, 30))
+    
+    if section == 0
+    {
+      headerView.backgroundColor = UIColor.greenColor()
+    }
+    else
+    {
+      headerView.backgroundColor = UIColor.greenColor()
+    }
+    return headerView
+  }
 }
