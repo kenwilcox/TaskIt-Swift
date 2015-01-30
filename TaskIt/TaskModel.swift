@@ -13,3 +13,11 @@ struct TaskModel {
   var subTask: String
   var date: NSDate
 }
+
+func >(left:TaskModel, right: TaskModel) -> Bool {
+  return left.date.timeIntervalSince1970 > right.date.timeIntervalSince1970
+}
+
+func <(left:TaskModel, right: TaskModel) -> Bool {
+  return left.date.timeIntervalSince1970 < right.date.timeIntervalSince1970
+}
