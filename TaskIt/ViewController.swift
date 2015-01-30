@@ -134,4 +134,30 @@ extension ViewController: UITableViewDelegate {
     baseArray[0] = sorted(baseArray[0], <)
     tableView.reloadData()
   }
+  
+  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+    var title: String
+    var color: UIColor
+    if indexPath.section == 0 {
+      title = "Done"
+      color = UIColor.greenColor()
+    } else {
+      title = "Not Done"
+      color = UIColor.blackColor()
+    }
+    
+    var deleteButton = UITableViewRowAction(style: .Default, title: title, handler: { (action, indexPath) in
+      self.tableView.dataSource?.tableView?(
+        self.tableView,
+        commitEditingStyle: .Delete,
+        forRowAtIndexPath: indexPath
+      )
+      
+      return
+    })
+    
+    deleteButton.backgroundColor = color
+    
+    return [deleteButton]
+  }
 }
