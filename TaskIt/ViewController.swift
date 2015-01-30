@@ -118,19 +118,12 @@ extension ViewController: UITableViewDelegate {
     }
   }
   
-  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    var numberOfSection: Int
-    var headerView: UIView = UIView()
-    headerView.drawRect(CGRectMake(0, 0, tableView.bounds.size.width, 30))
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
-    if section == 0
-    {
-      headerView.backgroundColor = UIColor.greenColor()
-    }
-    else
-    {
-      headerView.backgroundColor = UIColor.greenColor()
-    }
-    return headerView
+    let thisTask = self.baseArray[indexPath.section][indexPath.row]
+    var newTask = TaskModel(task: thisTask.task, subTask: thisTask.subTask, date: thisTask.date, completed: true)
+    self.baseArray[indexPath.section].removeAtIndex(indexPath.row)
+    self.baseArray[1].append(newTask)
+    tableView.reloadData()
   }
 }
