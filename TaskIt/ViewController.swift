@@ -48,6 +48,11 @@ class ViewController: UIViewController {
         //let thisTask = taskArray[indexPath.row]
         detailVC.detailTaskModel = thisTask
       }
+    } else if segue.identifier == "showTaskAdd" {
+      if segue.destinationViewController is AddTaskViewController {
+        let addTaskVC = segue.destinationViewController as AddTaskViewController
+        addTaskVC.mainVC = self
+      }
     }
   }
   
