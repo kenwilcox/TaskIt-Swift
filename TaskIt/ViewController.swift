@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         //let indexPath = sender as NSIndexPath
         //let thisTask = taskArray[indexPath.row]
         detailVC.detailTaskModel = thisTask
+        detailVC.mainVC = self
       }
     } else if segue.identifier == "showTaskAdd" {
       if segue.destinationViewController is AddTaskViewController {
