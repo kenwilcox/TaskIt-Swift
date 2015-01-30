@@ -12,8 +12,7 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
-  var taskArray:[TaskModel] = []
-  //var taskArray:[Dictionary<String,String>] = []
+  var baseArray: [[TaskModel]] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,10 +22,12 @@ class ViewController: UIViewController {
     let date2 = NSDate.from(year: 2015, month: 1, day: 27)
     let date3 = NSDate.from(year: 2015, month: 1, day: 31)
     
-    let task1 = TaskModel(task: "Study Swift", subTask: "iOS Docs, github, etc.", date: date1)
-    let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: date2)
+    let task1 = TaskModel(task: "Study Swift", subTask: "iOS Docs, github, etc.", date: date1, completed: false)
+    let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: date2, completed: false)
     
-    taskArray = [task1, task2, TaskModel(task: "Gym", subTask: "Leg day", date: date3)]
+    let taskArray = [task1, task2, TaskModel(task: "Gym", subTask: "Leg day", date: date3, completed: false)]
+    let completedArray = [TaskModel(task: "Code", subTask: "Task Project", date: date2, completed: true)]
+    baseArray = [taskArray, completedArray]
     
     // Get rid of the bogus empty rows
     tableView.tableFooterView = UIView()
@@ -39,7 +40,7 @@ class ViewController: UIViewController {
 //    taskArray.sort {
 //      $0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970
 //    }
-    taskArray = sorted(taskArray, <)
+    baseArray[0] = sorted(baseArray[0], <)
     
     tableView.reloadData()
   }
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
       if segue.destinationViewController is TaskDetailViewController {
         let detailVC = segue.destinationViewController as TaskDetailViewController
         let indexPath = self.tableView.indexPathForSelectedRow()
-        let thisTask = taskArray[indexPath!.row]
+        let thisTask = baseArray[indexPath!.section][indexPath!.row]
         //let indexPath = sender as NSIndexPath
         //let thisTask = taskArray[indexPath.row]
         detailVC.detailTaskModel = thisTask
@@ -76,13 +77,17 @@ class ViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
   
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return baseArray.count
+  }
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return taskArray.count
+    return baseArray[section].count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    let thisTask:TaskModel = taskArray[indexPath.row]
+    let thisTask:TaskModel = baseArray[indexPath.section][indexPath.row]
     var cell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskTableViewCell
     
     cell.taskLabel.text = thisTask.task
