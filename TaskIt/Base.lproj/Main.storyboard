@@ -210,7 +210,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ctd-w6-UbL">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ctd-w6-UbL">
                                 <rect key="frame" x="0.0" y="222" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="444233411.63382">
                                     <!--2015-01-29 14:10:11 +0000-->
