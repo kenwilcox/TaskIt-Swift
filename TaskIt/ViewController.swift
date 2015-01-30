@@ -120,10 +120,11 @@ extension ViewController: UITableViewDelegate {
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
-    let thisTask = self.baseArray[indexPath.section][indexPath.row]
-    var newTask = TaskModel(task: thisTask.task, subTask: thisTask.subTask, date: thisTask.date, completed: true)
+    var thisTask = self.baseArray[indexPath.section][indexPath.row]
     self.baseArray[indexPath.section].removeAtIndex(indexPath.row)
-    self.baseArray[1].append(newTask)
+    thisTask.completed = true
+    self.baseArray[1].append(thisTask)
+    
     tableView.reloadData()
   }
 }
