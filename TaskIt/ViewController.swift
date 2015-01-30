@@ -121,10 +121,17 @@ extension ViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
     var thisTask = self.baseArray[indexPath.section][indexPath.row]
-    self.baseArray[indexPath.section].removeAtIndex(indexPath.row)
-    thisTask.completed = true
-    self.baseArray[1].append(thisTask)
     
+    if indexPath.section == 0 {
+      thisTask.completed = true
+      self.baseArray[1].append(thisTask)
+    } else {
+      thisTask.completed = false
+      self.baseArray[0].append(thisTask)
+    }
+    self.baseArray[indexPath.section].removeAtIndex(indexPath.row)
+    
+    baseArray[0] = sorted(baseArray[0], <)
     tableView.reloadData()
   }
 }
