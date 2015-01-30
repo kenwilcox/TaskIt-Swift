@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
+    
+    // Preloads keyboard so there's no lag on initial keyboard appearance.
+    var lagFreeField: UITextField = UITextField()
+    self.window?.addSubview(lagFreeField)
+    lagFreeField.becomeFirstResponder()
+    lagFreeField.resignFirstResponder()
+    lagFreeField.removeFromSuperview()
+    
     return true
   }
   
