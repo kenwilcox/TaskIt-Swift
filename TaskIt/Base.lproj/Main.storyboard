@@ -117,12 +117,16 @@
                                 <action selector="cancelButtonTapped:" destination="CcO-sM-5m6" id="cG1-Si-GrL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="172-lt-V9u"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="172-lt-V9u">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="CcO-sM-5m6" id="zk6-hJ-fO7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dueDatePicker" destination="H9i-eI-IAY" id="7t1-CZ-pVX"/>
-                        <outlet property="subTaskTextField" destination="ebm-8c-JkH" id="BJd-2R-UWj"/>
+                        <outlet property="subtaskTextField" destination="ebm-8c-JkH" id="dIT-UU-RMd"/>
                         <outlet property="taskTextField" destination="anc-KU-M3Y" id="uPG-kT-P6C"/>
                     </connections>
                 </viewController>
