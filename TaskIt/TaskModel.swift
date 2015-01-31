@@ -2,23 +2,19 @@
 //  TaskModel.swift
 //  TaskIt
 //
-//  Created by Kenneth Wilcox on 1/27/15.
+//  Created by Kenneth Wilcox on 1/30/15.
 //  Copyright (c) 2015 Kenneth Wilcox. All rights reserved.
 //
 
 import Foundation
+import CoreData
 
-struct TaskModel {
-  var task: String
-  var subTask: String
-  var date: NSDate
-  var completed: Bool
-}
-
-func >(left:TaskModel, right: TaskModel) -> Bool {
-  return left.date.timeIntervalSince1970 > right.date.timeIntervalSince1970
-}
-
-func <(left:TaskModel, right: TaskModel) -> Bool {
-  return left.date.timeIntervalSince1970 < right.date.timeIntervalSince1970
+@objc(TaskModel)
+class TaskModel: NSManagedObject {
+  
+  @NSManaged var completed: NSNumber
+  @NSManaged var date: NSDate
+  @NSManaged var subtask: String
+  @NSManaged var task: String
+  
 }
