@@ -17,21 +17,6 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    
-    let date1 = NSDate.from(year: 2015, month: 1, day: 30)
-    let date2 = NSDate.from(year: 2015, month: 1, day: 27)
-    let date3 = NSDate.from(year: 2015, month: 1, day: 31)
-    
-    let task1 = TaskModel(task: "Study Swift", subTask: "iOS Docs, github, etc.", date: date1, completed: false)
-    let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: date2, completed: false)
-    
-    let taskArray = [task1, task2, TaskModel(task: "Gym", subTask: "Leg day", date: date3, completed: false)]
-    let completedArray = [TaskModel(task: "Code", subTask: "Task Project", date: date2, completed: true)]
-    baseArray = [taskArray, completedArray]
-    
-    // Get rid of the bogus empty rows
-    tableView.tableFooterView = UIView()
-    //tableView.reloadData()
   }
   
   override func viewDidAppear(animated: Bool) {
