@@ -7,16 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
+  
+  let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
+  var fetchedResultsController = NSFetchedResultsController()
+  
   
   var baseArray: [[TaskModel]] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    fetchedResultsController = getFetchedResultsController()
+    fetchedResultsController.delegate = self
+    fetchedResultsController.performFetch(nil)
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -56,6 +65,19 @@ class ViewController: UIViewController {
   
   @IBAction func addButtonTapped(sender: UIBarButtonItem) {
     performSegueWithIdentifier("showTaskAdd", sender: self)
+  }
+  
+  // Helper
+  func taskFetchRequest () -> NSFetchRequest {
+    let fetchRequest = NSFetchRequest(entityName: "TaskModel")
+    let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+    fetchRequest.sortDescriptors = [sortDescriptor]
+    
+    return fetchRequest
+  }
+  
+  func getFetchedResultsController() -> NSFetchedResultsController {
+    fetchedResultsController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
   }
 }
 
@@ -145,4 +167,9 @@ extension ViewController: UITableViewDelegate {
     
     return [deleteButton]
   }
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension ViewController: NSFetchedResultsControllerDelegate {
+  
 }
