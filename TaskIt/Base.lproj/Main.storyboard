@@ -46,7 +46,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="eKa-ZX-Ulw" id="M3G-hM-zZe"/>
                                             <outlet property="descriptionLabel" destination="UPN-RD-kiY" id="VAb-zv-Kep"/>
