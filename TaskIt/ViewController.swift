@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     fetchedResultsController = getFetchedResultsController()
     fetchedResultsController.delegate = self
     fetchedResultsController.performFetch(nil)
+    
+    tableView.tableFooterView = UIView()
   }
   
   override func viewDidAppear(animated: Bool) {
