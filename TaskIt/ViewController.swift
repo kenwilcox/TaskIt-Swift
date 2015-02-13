@@ -107,10 +107,20 @@ extension ViewController: UITableViewDelegate {
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    if section == 0 {
-      return "To do"
+    if fetchedResultsController.sections?.count == 1 {
+      let fetchedObjects = fetchedResultsController.fetchedObjects!
+      let testTask = fetchedObjects[0] as TaskModel
+      if testTask.completed == true {
+        return "Completed"
+      } else {
+        return "To do"
+      }
     } else {
-      return "Completed"
+      if section == 0 {
+        return "To do"
+      } else {
+        return "Completed"
+      }
     }
   }
   
