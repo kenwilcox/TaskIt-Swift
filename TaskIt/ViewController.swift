@@ -127,11 +127,10 @@ extension ViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
     var thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
-    
-    if indexPath.section == 0 {
-      thisTask.completed = true
-    } else {
+    if thisTask.completed == true {
       thisTask.completed = false
+    } else {
+      thisTask.completed = true
     }
     (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
   }
@@ -139,12 +138,26 @@ extension ViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
     var title: String
     var color: UIColor
-    if indexPath.section == 0 {
-      title = "Done"
-      color = UIColor.greenColor()
+    
+    if fetchedResultsController.sections?.count == 1 {
+      let fetchedObjects = fetchedResultsController.fetchedObjects!
+      let testTask = fetchedObjects[indexPath.row] as TaskModel
+      
+      if testTask.completed != true {
+        title = "Done"
+        color = UIColor.greenColor()
+      } else {
+        title = "Not Done"
+        color = UIColor.blackColor()
+      }
     } else {
-      title = "Not Done"
-      color = UIColor.blackColor()
+      if indexPath.section == 0 {
+        title = "Done"
+        color = UIColor.greenColor()
+      } else {
+        title = "Not Done"
+        color = UIColor.blackColor()
+      }
     }
     
     var deleteButton = UITableViewRowAction(style: .Default, title: title, handler: { (action, indexPath) in
