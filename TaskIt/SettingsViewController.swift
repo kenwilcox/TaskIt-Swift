@@ -57,12 +57,21 @@ class SettingsViewController: UIViewController {
 // MARK: UITableViewDataSource
 extension SettingsViewController: UITableViewDataSource {
   
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 0
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 2
   }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return 30
+  }
+  
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    if tableView == self.capitalizeTableView {
+      return "Capitalize new Task?"
+    }
+    else {
+      return "Complete new Task?"
+    }
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -85,11 +94,28 @@ extension SettingsViewController: UITableViewDataSource {
         }
       }
       return capitalizeCell
-    } else if tableView == self.completeNewTodoTableView {
+    } else {
       var completeNewTodoCell = tableView.dequeueReusableCellWithIdentifier("completeNewTodoCell") as UITableViewCell
+      if indexPath.row == 0 {
+        completeNewTodoCell.textLabel?.text = "Do not complete Task"
+        if defaults.boolForKey(kShouldCompleteNewTodoKey) == false {
+          completeNewTodoCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        else {
+          completeNewTodoCell.accessoryType = UITableViewCellAccessoryType.None
+        }
+      }
+      else {
+        completeNewTodoCell.textLabel?.text = "Complete Task"
+        if defaults.boolForKey(kShouldCompleteNewTodoKey) == true{
+          completeNewTodoCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        else {
+          completeNewTodoCell.accessoryType = UITableViewCellAccessoryType.None
+        }
+      }
       return completeNewTodoCell
     }
-    return UITableViewCell()
   }
 }
 
