@@ -121,5 +121,22 @@ extension SettingsViewController: UITableViewDataSource {
 
 // MARK: UITableViewDelegate
 extension SettingsViewController: UITableViewDelegate {
-  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let defaults = NSUserDefaults.standardUserDefaults()
+    if tableView == self.capitalizeTableView {
+      if indexPath.row == 0 {
+        defaults.setBool(false, forKey: kShouldCapitalizeTaskKey)
+      } else {
+        defaults.setBool(true, forKey: kShouldCapitalizeTaskKey)
+      }
+    } else {
+      if indexPath.row == 0 {
+        defaults.setBool(false, forKey: kShouldCompleteNewTodoKey)
+      } else {
+        defaults.setBool(true, forKey: kShouldCompleteNewTodoKey)
+      }
+    }
+    defaults.synchronize()
+    tableView.reloadData()
+  }
 }
