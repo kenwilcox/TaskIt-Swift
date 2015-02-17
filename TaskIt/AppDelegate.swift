@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+let kShouldCapitalizeTaskKey = "shouldCapitalizeTask"
+let kShouldCompleteNewTodoKey = "completeNewTodo"
+let kLoadedOnceKey = "loadOnce"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
@@ -24,6 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lagFreeField.becomeFirstResponder()
     lagFreeField.resignFirstResponder()
     lagFreeField.removeFromSuperview()
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+    if defaults.boolForKey(kLoadedOnceKey) == false {
+      defaults.setBool(true, forKey: kLoadedOnceKey)
+      defaults.setBool(false, forKey: kShouldCapitalizeTaskKey)
+      defaults.setBool(false, forKey: kShouldCompleteNewTodoKey)
+      defaults.synchronize()
+    }
     
     return true
   }

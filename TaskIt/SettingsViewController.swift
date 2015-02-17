@@ -14,9 +14,6 @@ class SettingsViewController: UIViewController {
   @IBOutlet weak var completeNewTodoTableView: UITableView!
   @IBOutlet weak var versionLabel: UILabel!
   
-  let kShouldCapitalizeTaskKey = "shouldCapitalizeTask"
-  let kShouldCompleteNewTodoKey = "completeNewTodo"
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
