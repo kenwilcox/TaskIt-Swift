@@ -92,6 +92,7 @@ extension SettingsViewController: UITableViewDataSource {
           capitalizeCell.accessoryType = UITableViewCellAccessoryType.None
         }
       }
+      capitalizeCell.textLabel?.textColor = UIColor.lightGrayColor()
       return capitalizeCell
     } else {
       var completeNewTodoCell = tableView.dequeueReusableCellWithIdentifier("completeNewTodoCell") as UITableViewCell
@@ -113,6 +114,7 @@ extension SettingsViewController: UITableViewDataSource {
           completeNewTodoCell.accessoryType = UITableViewCellAccessoryType.None
         }
       }
+      completeNewTodoCell.textLabel?.textColor = UIColor.lightGrayColor()
       return completeNewTodoCell
     }
   }
