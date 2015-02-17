@@ -49,6 +49,7 @@ class ViewController: UIViewController {
     } else if segue.identifier == "showTaskAdd" {
       if segue.destinationViewController is AddTaskViewController {
         let addTaskVC = segue.destinationViewController as AddTaskViewController
+        addTaskVC.delegate = self
       }
     }
   }
@@ -70,6 +71,12 @@ class ViewController: UIViewController {
   func getFetchedResultsController() -> NSFetchedResultsController {
     fetchedResultsController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: "completed", cacheName: nil)
     return fetchedResultsController
+  }
+  
+  func showAlert (message:String = "Congradulations", title:String = "Change Made!") {
+    var alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+    self.presentViewController(alert, animated: true, completion: nil)
   }
 }
 
@@ -190,5 +197,16 @@ extension ViewController: NSFetchedResultsControllerDelegate {
 extension ViewController: TaskDetailViewControllerDelegate {
   func taskDetailEdited() {
     println("taskDetailEdited")
+  }
+}
+
+// MARK: - AddTaskViewControllerDelegate
+extension ViewController: AddTaskViewControllerDelegate {
+  func addTask(message: String) {
+    showAlert(message: message)
+  }
+  
+  func addTaskCanceled(message: String) {
+    showAlert(message: message, title: "Canceled")
   }
 }
