@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3EFB821A92F6A500DB976C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3EFB811A92F6A500DB976C /* SettingsViewController.swift */; };
 		BEB7B74E1A775B8900B2441E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B74D1A775B8900B2441E /* AppDelegate.swift */; };
 		BEB7B7501A775B8900B2441E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB7B74F1A775B8900B2441E /* ViewController.swift */; };
 		BEB7B7531A775B8900B2441E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB7B7511A775B8900B2441E /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE3EFB811A92F6A500DB976C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BEB7B7481A775B8900B2441E /* TaskIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB7B74C1A775B8900B2441E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB7B74D1A775B8900B2441E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				BEB7B74F1A775B8900B2441E /* ViewController.swift */,
 				BEB7B7751A77D7EC00B2441E /* TaskDetailViewController.swift */,
 				BEB7B7791A7A73AC00B2441E /* AddTaskViewController.swift */,
+				BE3EFB811A92F6A500DB976C /* SettingsViewController.swift */,
 				BEB7B7711A77672100B2441E /* TaskTableViewCell.swift */,
 				BEB7B7771A78AB0A00B2441E /* Date.swift */,
 				BEB7B7511A775B8900B2441E /* Main.storyboard */,
@@ -242,6 +245,7 @@
 				BEB7B7501A775B8900B2441E /* ViewController.swift in Sources */,
 				BEB7B77D1A7CAC7900B2441E /* TaskItModel.xcdatamodeld in Sources */,
 				BEB7B7781A78AB0A00B2441E /* Date.swift in Sources */,
+				BE3EFB821A92F6A500DB976C /* SettingsViewController.swift in Sources */,
 				BEEC245F1A7DF6BE00810BD7 /* TaskModel.swift in Sources */,
 				BEB7B74E1A775B8900B2441E /* AppDelegate.swift in Sources */,
 				BEB7B7721A77672100B2441E /* TaskTableViewCell.swift in Sources */,
