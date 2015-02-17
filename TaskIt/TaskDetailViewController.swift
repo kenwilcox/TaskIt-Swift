@@ -26,6 +26,8 @@ class TaskDetailViewController: UIViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+    
     self.taskTextField.text = detailTaskModel.task
     self.subtaskTextField.text = detailTaskModel.subtask
     self.dueDatePicker.date = detailTaskModel.date
