@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         let thisTask = fetchedResultsController.objectAtIndexPath(indexPath!) as TaskModel
         
         detailVC.detailTaskModel = thisTask
+        detailVC.delegate = self
       }
     } else if segue.identifier == "showTaskAdd" {
       if segue.destinationViewController is AddTaskViewController {
@@ -185,3 +186,9 @@ extension ViewController: NSFetchedResultsControllerDelegate {
   }
 }
 
+// MARK: - TaskDetailViewControllerDelegate
+extension ViewController: TaskDetailViewControllerDelegate {
+  func taskDetailEdited() {
+    println("taskDetailEdited")
+  }
+}
