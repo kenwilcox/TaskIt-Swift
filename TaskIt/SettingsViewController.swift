@@ -14,6 +14,9 @@ class SettingsViewController: UIViewController {
   @IBOutlet weak var completeNewTodoTableView: UITableView!
   @IBOutlet weak var versionLabel: UILabel!
   
+  let kShouldCapitalizeTaskKey = "shouldCapitalizeTask"
+  let kShouldCompleteNewTodoKey = "completeNewTodo"
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -63,9 +66,30 @@ extension SettingsViewController: UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
-    var cell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskTableViewCell
-    return cell
+    let defaults = NSUserDefaults.standardUserDefaults()
+    if tableView == self.capitalizeTableView {
+      var capitalizeCell = tableView.dequeueReusableCellWithIdentifier("capitalizeCell") as UITableViewCell
+      if indexPath.row == 0 {
+        capitalizeCell.textLabel?.text = "No, do not capitalize"
+        if defaults.boolForKey(kShouldCapitalizeTaskKey) == false {
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.None
+        }
+      } else {
+        capitalizeCell.textLabel?.text = "Yes, Capitalize!"
+        if defaults.boolForKey(kShouldCapitalizeTaskKey) == true {
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+          capitalizeCell.accessoryType = UITableViewCellAccessoryType.None
+        }
+      }
+      return capitalizeCell
+    } else if tableView == self.completeNewTodoTableView {
+      var completeNewTodoCell = tableView.dequeueReusableCellWithIdentifier("completeNewTodoCell") as UITableViewCell
+      return completeNewTodoCell
+    }
+    return UITableViewCell()
   }
 }
 
