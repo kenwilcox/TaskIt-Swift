@@ -27,6 +27,7 @@ class SettingsViewController: UIViewController {
     self.completeNewTodoTableView.delegate = self
     self.completeNewTodoTableView.dataSource = self
     self.completeNewTodoTableView.scrollEnabled = false
+    self.completeNewTodoTableView.tableFooterView = UIView()
     
     self.title = "Settings"
     
