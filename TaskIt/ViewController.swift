@@ -135,6 +135,10 @@ extension ViewController: UITableViewDelegate {
     }
   }
   
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    cell.backgroundColor = UIColor.clearColor()
+  }
+  
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
     var thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
