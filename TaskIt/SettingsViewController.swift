@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController {
     self.capitalizeTableView.delegate = self
     self.capitalizeTableView.dataSource = self
     self.capitalizeTableView.scrollEnabled = false
+    self.capitalizeTableView.tableFooterView = UIView()
     
     self.completeNewTodoTableView.delegate = self
     self.completeNewTodoTableView.dataSource = self
