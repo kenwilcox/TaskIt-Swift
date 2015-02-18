@@ -142,4 +142,8 @@ extension SettingsViewController: UITableViewDelegate {
     defaults.synchronize()
     tableView.reloadData()
   }
+  
+  func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    cell.backgroundColor = UIColor.clearColor()
+  }
 }
