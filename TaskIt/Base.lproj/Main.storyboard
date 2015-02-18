@@ -17,14 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HzC-fZ-YP3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HzC-fZ-YP3">
                                 <rect key="frame" x="140" y="85" width="320" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="7Af-Dl-ei9"/>
                                     <constraint firstAttribute="width" constant="420" id="7ng-kl-y9b"/>
                                     <constraint firstAttribute="height" constant="160" id="YSB-WU-XDr"/>
-                                    <constraint firstAttribute="width" constant="320" id="Ygg-fU-wut"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="capitalizeCell" id="Y5u-pv-bRe">
@@ -53,12 +52,11 @@
                                     </mask>
                                 </variation>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9jH-Hu-JjS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9jH-Hu-JjS">
                                 <rect key="frame" x="140" y="253" width="320" height="160"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="420" id="LWm-Ug-m8B"/>
-                                    <constraint firstAttribute="width" constant="320" id="VlE-pD-tUG"/>
                                     <constraint firstAttribute="width" constant="320" id="gP7-LI-Bls"/>
                                     <constraint firstAttribute="height" constant="160" id="vDN-qo-ZWE"/>
                                 </constraints>
@@ -134,12 +132,10 @@
                             <constraint firstItem="HzC-fZ-YP3" firstAttribute="top" secondItem="mLz-Th-UtQ" secondAttribute="bottom" constant="21" id="Cql-nm-gye"/>
                             <constraint firstItem="HzC-fZ-YP3" firstAttribute="top" secondItem="mLz-Th-UtQ" secondAttribute="bottom" constant="28" id="GqH-VV-9Ti"/>
                             <constraint firstAttribute="centerX" secondItem="lHL-Qq-1dU" secondAttribute="centerX" id="KjQ-Ef-XDg"/>
-                            <constraint firstItem="lHL-Qq-1dU" firstAttribute="top" secondItem="9jH-Hu-JjS" secondAttribute="bottom" constant="24" id="N9P-Xn-bq1"/>
                             <constraint firstAttribute="centerX" secondItem="9jH-Hu-JjS" secondAttribute="centerX" id="PZk-cx-MHA"/>
                             <constraint firstItem="lHL-Qq-1dU" firstAttribute="top" secondItem="9jH-Hu-JjS" secondAttribute="bottom" constant="13" id="U0Q-S8-hRy"/>
                             <constraint firstAttribute="centerX" secondItem="9jH-Hu-JjS" secondAttribute="centerX" id="UNI-0I-zyS"/>
                             <constraint firstAttribute="centerX" secondItem="HzC-fZ-YP3" secondAttribute="centerX" id="a36-Mk-pbq"/>
-                            <constraint firstItem="HzC-fZ-YP3" firstAttribute="top" secondItem="mLz-Th-UtQ" secondAttribute="bottom" constant="28" id="bby-N4-aZF"/>
                             <constraint firstItem="9jH-Hu-JjS" firstAttribute="top" secondItem="HzC-fZ-YP3" secondAttribute="bottom" constant="8" id="dhW-yN-vVX"/>
                             <constraint firstAttribute="centerX" secondItem="HzC-fZ-YP3" secondAttribute="centerX" id="fB3-8D-Ath"/>
                             <constraint firstItem="9jH-Hu-JjS" firstAttribute="top" secondItem="HzC-fZ-YP3" secondAttribute="bottom" constant="8" id="oQI-Nj-3Bu"/>
@@ -149,7 +145,6 @@
                             <mask key="constraints">
                                 <exclude reference="55A-sx-g3H"/>
                                 <exclude reference="GqH-VV-9Ti"/>
-                                <exclude reference="bby-N4-aZF"/>
                                 <exclude reference="fB3-8D-Ath"/>
                                 <exclude reference="1aL-Jf-czu"/>
                                 <exclude reference="UNI-0I-zyS"/>
@@ -164,7 +159,6 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="55A-sx-g3H"/>
-                                <include reference="bby-N4-aZF"/>
                                 <include reference="1aL-Jf-czu"/>
                                 <include reference="UNI-0I-zyS"/>
                                 <include reference="53i-6k-hOC"/>
