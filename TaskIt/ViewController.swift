@@ -75,7 +75,7 @@ class ViewController: UIViewController {
     return fetchedResultsController
   }
   
-  func showAlert (message:String = "Congradulations", title:String = "Change Made!") {
+  func showAlert (message:String = "Congratulations", title:String = "Change Made!") {
     var alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
     self.presentViewController(alert, animated: true, completion: nil)
