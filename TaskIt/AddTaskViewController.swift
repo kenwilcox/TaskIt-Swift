@@ -41,7 +41,7 @@ class AddTaskViewController: UIViewController {
   
   @IBAction func addTaskButtonTapped(sender: UIButton) {
     let appDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-    let managedObjectContext = appDelegate.managedObjectContext
+    let managedObjectContext = ModelManager.instance.managedObjectContext
     let entityDescription = NSEntityDescription.entityForName("TaskModel", inManagedObjectContext: managedObjectContext!)
     let task = TaskModel(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext!)
     
@@ -55,7 +55,7 @@ class AddTaskViewController: UIViewController {
     task.date = dueDatePicker.date
     task.completed = defaults.boolForKey(kShouldCompleteNewTodoKey)
     
-    appDelegate.saveContext()
+    ModelManager.instance.saveContext()
     
     // Dump what has been saved
     var request = NSFetchRequest(entityName: "TaskModel")

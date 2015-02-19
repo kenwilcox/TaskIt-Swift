@@ -13,7 +13,6 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
-  let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext!
   var fetchedResultsController = NSFetchedResultsController()
   
   override func viewDidLoad() {
@@ -24,6 +23,8 @@ class ViewController: UIViewController {
     fetchedResultsController = getFetchedResultsController()
     fetchedResultsController.delegate = self
     fetchedResultsController.performFetch(nil)
+    
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("iCloudUpdated"), name: kCoreDataUpdated, object: nil)
     
     tableView.tableFooterView = UIView()
   }
@@ -70,7 +71,7 @@ class ViewController: UIViewController {
   }
   
   func getFetchedResultsController() -> NSFetchedResultsController {
-    fetchedResultsController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: managedObjectContext, sectionNameKeyPath: "completed", cacheName: nil)
+    fetchedResultsController = NSFetchedResultsController(fetchRequest: taskFetchRequest(), managedObjectContext: ModelManager.instance.managedObjectContext!, sectionNameKeyPath: "completed", cacheName: nil)
     return fetchedResultsController
   }
   
@@ -78,6 +79,11 @@ class ViewController: UIViewController {
     var alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
     alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
     self.presentViewController(alert, animated: true, completion: nil)
+  }
+  
+  // iCloud Notification
+  func iCloudUpdated() {
+    tableView.reloadData()
   }
 }
 
@@ -147,7 +153,7 @@ extension ViewController: UITableViewDelegate {
     } else {
       thisTask.completed = true
     }
-    (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
+    ModelManager.instance.saveContext()
   }
   
   func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
