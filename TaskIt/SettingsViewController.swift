@@ -78,7 +78,7 @@ extension SettingsViewController: UITableViewDataSource {
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let defaults = NSUserDefaults.standardUserDefaults()
     if tableView == self.capitalizeTableView {
-      var capitalizeCell = tableView.dequeueReusableCellWithIdentifier("capitalizeCell") as UITableViewCell
+      var capitalizeCell = tableView.dequeueReusableCellWithIdentifier("capitalizeCell") as! UITableViewCell
       if indexPath.row == 0 {
         capitalizeCell.textLabel?.text = "No, do not capitalize"
         if defaults.boolForKey(kShouldCapitalizeTaskKey) == false {
@@ -97,7 +97,7 @@ extension SettingsViewController: UITableViewDataSource {
       capitalizeCell.textLabel?.textColor = UIColor.lightGrayColor()
       return capitalizeCell
     } else {
-      var completeNewTodoCell = tableView.dequeueReusableCellWithIdentifier("completeNewTodoCell") as UITableViewCell
+      var completeNewTodoCell = tableView.dequeueReusableCellWithIdentifier("completeNewTodoCell") as! UITableViewCell
       if indexPath.row == 0 {
         completeNewTodoCell.textLabel?.text = "Do not complete Task"
         if defaults.boolForKey(kShouldCompleteNewTodoKey) == false {

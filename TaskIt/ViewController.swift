@@ -41,16 +41,16 @@ class ViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "showTaskDetail" {
       if segue.destinationViewController is TaskDetailViewController {
-        let detailVC = segue.destinationViewController as TaskDetailViewController
+        let detailVC = segue.destinationViewController as! TaskDetailViewController
         let indexPath = self.tableView.indexPathForSelectedRow()
-        let thisTask = fetchedResultsController.objectAtIndexPath(indexPath!) as TaskModel
+        let thisTask = fetchedResultsController.objectAtIndexPath(indexPath!) as! TaskModel
         
         detailVC.detailTaskModel = thisTask
         detailVC.delegate = self
       }
     } else if segue.identifier == "showTaskAdd" {
       if segue.destinationViewController is AddTaskViewController {
-        let addTaskVC = segue.destinationViewController as AddTaskViewController
+        let addTaskVC = segue.destinationViewController as! AddTaskViewController
         addTaskVC.delegate = self
       }
     }
@@ -100,8 +100,8 @@ extension ViewController: UITableViewDataSource {
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
-    let thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
-    var cell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskTableViewCell
+    let thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as! TaskModel
+    var cell = tableView.dequeueReusableCellWithIdentifier("myCell") as! TaskTableViewCell
     
     cell.taskLabel.text = thisTask.task
     cell.descriptionLabel.text = thisTask.subtask
@@ -126,7 +126,7 @@ extension ViewController: UITableViewDelegate {
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if fetchedResultsController.sections?.count == 1 {
       let fetchedObjects = fetchedResultsController.fetchedObjects!
-      let testTask = fetchedObjects[0] as TaskModel
+      let testTask = fetchedObjects[0] as! TaskModel
       if testTask.completed == true {
         return "Completed"
       } else {
@@ -147,7 +147,7 @@ extension ViewController: UITableViewDelegate {
   
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
-    var thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
+    var thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as! TaskModel
     if thisTask.completed == true {
       thisTask.completed = false
     } else {
@@ -162,7 +162,7 @@ extension ViewController: UITableViewDelegate {
     
     if fetchedResultsController.sections?.count == 1 {
       let fetchedObjects = fetchedResultsController.fetchedObjects!
-      let testTask = fetchedObjects[indexPath.row] as TaskModel
+      let testTask = fetchedObjects[indexPath.row] as! TaskModel
       
       if testTask.completed != true {
         title = "Done"
